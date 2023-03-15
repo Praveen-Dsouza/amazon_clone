@@ -12,8 +12,7 @@ export function Navbar() {
             <img className='navbar_logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='logo' />
         {/* </Link> */}
         <div className="navbar_search">
-            <input type="text" className="navbar_searchInput" />
-            {/* <InputField type='text' class='navbar_searchInput' /> */}
+            <InputField type='text' class='navbar_searchInput' />
             <SearchIcon className='navbar_searchIcon'/>
         </div>
         <div className="navbar_nav">

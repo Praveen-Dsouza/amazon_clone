@@ -15,7 +15,7 @@ function InputField(props) {
     }, [props.value])
 
     return (
-        <div>
+        <>
             <input 
                 type={props.type}
                 id={props.id}
@@ -27,7 +27,7 @@ function InputField(props) {
                 required={props.required ? props.required : false}
                 maxLength={props.maxLength? props.maxLength: 250}
             />
-        </div>
+        </>
     )
 }
 
