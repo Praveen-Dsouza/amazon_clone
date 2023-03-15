@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/Components/Product.scss';
 import StarIcon from '@material-ui/icons/Star';
+import Button from './Common/Button';
 
 function Product({ id, title, image, price, rating }) {
 
@@ -21,7 +22,7 @@ function Product({ id, title, image, price, rating }) {
 
             <img className='product_image' src={image} alt=''/>
 
-            <button className='add_to_cart_button'>Add to Cart</button>
+            <Button text='Add to Cart' />
         </div>
     )
 }
