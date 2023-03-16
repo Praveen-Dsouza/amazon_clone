@@ -4,7 +4,7 @@ import '../../Styles/Components/Common/Button.scss';
 
 function Button(props) {
   return (
-    <div>
+    <>
         <button
             className={props.class}
             onClick={() => { props.handleClick(props.data || null) }}
@@ -12,7 +12,7 @@ function Button(props) {
         >
             {props.text}
         </button>
-    </div>
+    </>
   )
 }
 

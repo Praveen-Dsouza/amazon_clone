@@ -3,14 +3,18 @@ import '../Styles/Components/Navbar.scss';
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import InputField from './Common/InputField';
-// import { Link } from 'react-router-dom';
+import { useStateValue } from '../Utils/StateProvider';
+import { Link } from 'react-router-dom';
 
 export function Navbar() {
+
+  const [{ cart }, dispatch] = useStateValue();
+
   return (
     <div className='navbar'>
-        {/* <Link to="/"> */}
+        <Link to="/">
             <img className='navbar_logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='logo' />
-        {/* </Link> */}
+        </Link>
         <div className="navbar_search">
             <InputField type='text' class='navbar_searchInput' />
             <SearchIcon className='navbar_searchIcon'/>
@@ -41,12 +45,12 @@ export function Navbar() {
                 </span>
             </div>
             
-            {/* <Link to="/checkout"> */}
+            <Link to="/checkout">
                 <div className="navbar_optionBasket">
                     <ShoppingBasketIcon />
-                    <span className="option_LineTwo navbar_basketCount">0</span>
+                    <span className="option_LineTwo navbar_basketCount">{cart?.length}</span>
                 </div>
-            {/* </Link> */}
+            </Link>
         </div>
     </div>
   )

@@ -1,19 +1,24 @@
 import React from "react";
 import "./App.scss";
-import Home from "./Components/Home";
+import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Checkout from "./Components/Checkout";
+import Checkout from "./Components/Checkout/Checkout";
 
 // Defination of routes
 const routes = createBrowserRouter([
+  // {
+  //   element: <Navbar />,
+  //   children: [
+  //   ]
+  // },
   {
     path: "/",
-    element: <Home />,
+    element: [<Navbar />, <Home />],
   },
   {
-    path: "/checkout",
-    element: <Checkout />,
+    path: "checkout",
+    element: [<Navbar />, <Checkout />],
   },
 ]);
 
@@ -21,7 +26,6 @@ function App() {
   return (
     <div>
       <React.StrictMode>
-        <Navbar />
         <RouterProvider router={routes} />
       </React.StrictMode>
     </div>

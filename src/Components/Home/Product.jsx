@@ -1,9 +1,27 @@
 import React from 'react';
-import '../Styles/Components/Product.scss';
+import '../../Styles/Components/Home/Product.scss';
 import StarIcon from '@material-ui/icons/Star';
-import Button from './Common/Button';
+import Button from '../Common/Button';
+import { useStateValue } from '../../Utils/StateProvider';
 
 function Product({ id, title, image, price, rating }) {
+
+    const [{ cart }, dispatch] = useStateValue();
+    console.log('This is the cart', cart)
+
+    const addToCart = () => {
+        // dispatch the item in the data layer
+        dispatch({
+            type: "ADD_TO_CART",
+            item: {
+                id,
+                title,
+                image,
+                price,
+                rating
+            },
+        });
+    }
 
     return (
         <div className='product'>
@@ -15,14 +33,14 @@ function Product({ id, title, image, price, rating }) {
                 </p>
                 <div className="product_rating">
                     {Array(rating).fill().map((_, i) => (
-                        <p><StarIcon className='product_ratinIcon' /></p>
+                        <p><StarIcon className='product_ratingIcon' /></p>
                     ))}
                 </div>
             </div>
 
             <img className='product_image' src={image} alt=''/>
 
-            <Button text='Add to Cart' />
+            <Button handleClick={addToCart} text='Add to Cart' />
         </div>
     )
 }
