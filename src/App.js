@@ -4,6 +4,7 @@ import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Checkout from "./Components/Checkout/Checkout";
+import Login from "./Components/Login";
 
 // Defination of routes
 const routes = createBrowserRouter([
@@ -19,6 +20,10 @@ const routes = createBrowserRouter([
   {
     path: "checkout",
     element: [<Navbar />, <Checkout />],
+  },
+  {
+    path: "login",
+    element: <Login />,
   },
 ]);
 

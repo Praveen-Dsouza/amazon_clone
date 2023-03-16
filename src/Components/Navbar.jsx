@@ -20,14 +20,16 @@ export function Navbar() {
             <SearchIcon className='navbar_searchIcon'/>
         </div>
         <div className="navbar_nav">
-            <div className="navbar_option">
-            <span className="option_LineOne">
-                    Hello Guest
-                </span>
-                <span className="option_LineTwo">
-                    Sign In
-                </span>
-            </div>
+            <Link to='/login'>
+                <div className="navbar_option">
+                    <span className="option_LineOne">
+                        Hello Guest
+                    </span>
+                    <span className="option_LineTwo">
+                        Sign In
+                    </span>
+                </div>
+            </Link>
             <div className="navbar_option">
                 <span className="option_LineOne">
                     Returns

@@ -5,9 +5,9 @@ import '../../Styles/Components/Common/InputField.scss';
 function InputField(props) {
     const [value, setValue] = useState(props.value)
 
-    const handleChange = (id, value) => {
+    const handleChange = (value) => {
         setValue(value)
-        props.onInputValueChange(id, value)
+        props.onInputValueChange(value)
     }
 
     useEffect(() => {
@@ -18,12 +18,11 @@ function InputField(props) {
         <>
             <input 
                 type={props.type}
-                id={props.id}
                 className={`form-control ${props.class}`}
                 placeholder={props.placeholder || ''}
                 value={value || ''}
                 disabled={props.disabled ? props.disabled: false}
-                onChange={(e) => handleChange(props.id, e.target.value)}
+                onChange={(e) => handleChange(e.target.value)}
                 required={props.required ? props.required : false}
                 maxLength={props.maxLength? props.maxLength: 250}
             />
@@ -33,7 +32,6 @@ function InputField(props) {
 
 InputField.propTypes = {
     type: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
     class: PropTypes.string,
     placeholder: PropTypes.string,
     value: PropTypes.any,

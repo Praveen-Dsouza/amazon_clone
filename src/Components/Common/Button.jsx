@@ -6,7 +6,8 @@ function Button(props) {
   return (
     <>
         <button
-            className={props.class}
+            type={props.type}
+            className={`c_pointer ${props.class}`}
             onClick={() => { props.handleClick(props.data || null) }}
             disabled={props.disabled ? props.disabled: false}
         >
@@ -18,6 +19,7 @@ function Button(props) {
 
 Button.propTypes = {
     text: PropTypes.string.isRequired,
+    type: PropTypes.string,
     class: PropTypes.string,
     handleClick: PropTypes.func,
     data: PropTypes.any,
