@@ -22,7 +22,6 @@ Button.propTypes = {
     type: PropTypes.string,
     class: PropTypes.string,
     handleClick: PropTypes.func,
-    data: PropTypes.any,
     disabled: PropTypes.bool
 }
 

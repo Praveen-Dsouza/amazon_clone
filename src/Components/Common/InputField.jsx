@@ -1,18 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import '../../Styles/Components/Common/InputField.scss';
 
 function InputField(props) {
-    // const [value, setValue] = useState(props.value)
-
-    // const handleChange = (id, value) => {
-    //     setValue(value)
-    //     props.onInputValueChange(id, value)
-    // }
-
-    // useEffect(() => {
-    //     setValue(props.value)
-    // }, [props.value])
 
     return (
         <>

@@ -5,10 +5,16 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import InputField from './Common/InputField';
 import { useStateValue } from '../Utils/StateProvider';
 import { Link } from 'react-router-dom';
+import { auth } from '../firebase';
 
 export function Navbar() {
 
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
+  const handleAuth = () => {
+    if (user) {
+        auth.signOut();
+    }
+  }
 
   return (
     <div className='navbar'>
@@ -20,13 +26,13 @@ export function Navbar() {
             <SearchIcon className='navbar_searchIcon'/>
         </div>
         <div className="navbar_nav">
-            <Link to='/login'>
-                <div className="navbar_option">
+            <Link style={{ textDecoration: 'none' }} to={!user && '/login'}>
+                <div onClick={handleAuth} className="navbar_option">
                     <span className="option_LineOne">
-                        Hello Guest
+                        Hello {user? user.multiFactor.user.email : 'Guest'}
                     </span>
                     <span className="option_LineTwo">
-                        Sign In
+                        { user ? 'Sign Out' : 'Sign In'}
                     </span>
                 </div>
             </Link>
