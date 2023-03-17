@@ -8,7 +8,7 @@ function Button(props) {
         <button
             type={props.type}
             className={`c_pointer ${props.class}`}
-            onClick={() => { props.handleClick(props.data || null) }}
+            onClick={props.handleClick }
             disabled={props.disabled ? props.disabled: false}
         >
             {props.text}

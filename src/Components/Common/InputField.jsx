@@ -3,26 +3,27 @@ import PropTypes from 'prop-types';
 import '../../Styles/Components/Common/InputField.scss';
 
 function InputField(props) {
-    const [value, setValue] = useState(props.value)
+    // const [value, setValue] = useState(props.value)
 
-    const handleChange = (value) => {
-        setValue(value)
-        props.onInputValueChange(value)
-    }
+    // const handleChange = (id, value) => {
+    //     setValue(value)
+    //     props.onInputValueChange(id, value)
+    // }
 
-    useEffect(() => {
-        setValue(props.value)
-    }, [props.value])
+    // useEffect(() => {
+    //     setValue(props.value)
+    // }, [props.value])
 
     return (
         <>
             <input 
                 type={props.type}
+                id={props.id}
                 className={`form-control ${props.class}`}
                 placeholder={props.placeholder || ''}
-                value={value || ''}
+                value={props.value || ''}
                 disabled={props.disabled ? props.disabled: false}
-                onChange={(e) => handleChange(e.target.value)}
+                onChange={props.handleChange}
                 required={props.required ? props.required : false}
                 maxLength={props.maxLength? props.maxLength: 250}
             />
@@ -32,11 +33,13 @@ function InputField(props) {
 
 InputField.propTypes = {
     type: PropTypes.string.isRequired,
+    id: PropTypes.string,
     class: PropTypes.string,
+    data: PropTypes.any,
     placeholder: PropTypes.string,
     value: PropTypes.any,
     disabled: PropTypes.bool,
-    onInputValueChange: PropTypes.func,
+    handleChange: PropTypes.any,
     required: PropTypes.bool,
     maxLength: PropTypes.number
 }
