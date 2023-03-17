@@ -29,7 +29,7 @@ export function Navbar() {
             <Link style={{ textDecoration: 'none' }} to={!user && '/login'}>
                 <div onClick={handleAuth} className="navbar_option">
                     <span className="option_LineOne">
-                        Hello {user? user.multiFactor.user.email : 'Guest'}
+                        Hello {user? user?.email : 'Guest'}
                     </span>
                     <span className="option_LineTwo">
                         { user ? 'Sign Out' : 'Sign In'}
