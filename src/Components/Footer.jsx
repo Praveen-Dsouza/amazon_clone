@@ -6,11 +6,11 @@ function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'auto'});
   
 	return (
-        <div>
+        <div className='footer'>
             <div className="footer_backToTop" onClick={scrollToTop}>
                 <p>Back to top</p>
             </div>
-            <div className="footer">
+            <div className="footer_service">
                 <div className="footer_container">
                     <div className="footer_all">
                         <div className="footer_title">Get To Know Us</div>

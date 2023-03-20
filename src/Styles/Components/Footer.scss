@@ -1,11 +1,14 @@
 .footer {
+    bottom: 0px !important;
+    width: 100%;
+    position: fixed !important;
+}
+
+.footer_service {
     background-color: #232f3e;
-    position: relative;
-    bottom: 0;
     z-index: 1;
     color: #DDD;
     overflow: hidden;
-    width: 100%;
 }
 
 .footer_container {

@@ -19,7 +19,7 @@ function Checkout() {
                 <div>
                     <h3 className='checkout_userEmail'>Hello, {user?.email}</h3>
                     <h2 className='checkout_title'>
-                        Your shopping Basket
+                        {cart.length ? 'Your shopping Basket' : 'Your Amazon Cart is empty'}
                     </h2>
                     {cart.map(item => ( 
                         <CheckoutProduct 

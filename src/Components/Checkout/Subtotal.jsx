@@ -5,10 +5,12 @@ import Button from '../Common/Button';
 import InputField from '../Common/InputField';
 import { useStateValue } from '../../Utils/StateProvider';
 import { getCartTotal } from '../../Utils/Reducer';
+import { useNavigate } from 'react-router-dom';
 
 function Subtotal() {
 
   const [{ cart }, dispatch] = useStateValue();
+  const navigate = useNavigate()
 
   return (
     <div className='subtotal'>
@@ -29,7 +31,7 @@ function Subtotal() {
         prefix={"$"}
       />
 
-      <Button class='full_widthButton' text='Proceed to Checkout' />
+      <Button class='full_widthButton' handleClick={e => navigate('/payment')} text='Proceed to Checkout' />
     </div>
   )
 }
