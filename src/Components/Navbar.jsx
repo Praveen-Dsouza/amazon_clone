@@ -19,7 +19,7 @@ export function Navbar() {
   return (
     <div className='navbar'>
         <Link to="/">
-            <img className='navbar_logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='logo' />
+            <img title='home' className='navbar_logo' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='logo' />
         </Link>
         <div className="navbar_search">
             <InputField type='text' class='navbar_searchInput' />
@@ -53,7 +53,7 @@ export function Navbar() {
                 </span>
             </div>
             
-            <Link to="/checkout">
+            <Link title='cart' style={{ textDecoration: 'none' }} to="/checkout">
                 <div className="navbar_optionBasket">
                     <ShoppingBasketIcon />
                     <span className="option_LineTwo navbar_basketCount">{cart?.length}</span>
