@@ -7,6 +7,7 @@ import Checkout from "./Components/Checkout/Checkout";
 import Login from "./Components/Login";
 import { auth } from './firebase';
 import { useStateValue } from "./Utils/StateProvider";
+import Footer from "./Components/Footer";
 
 // Defination of routes
 const routes = createBrowserRouter([
@@ -17,11 +18,11 @@ const routes = createBrowserRouter([
   // },
   {
     path: "/",
-    element: [<Navbar />, <Home />],
+    element: [<Navbar />, <Home />, <Footer />],
   },
   {
     path: "checkout",
-    element: [<Navbar />, <Checkout />],
+    element: [<Navbar />, <Checkout />, <Footer />],
   },
   {
     path: "login",
