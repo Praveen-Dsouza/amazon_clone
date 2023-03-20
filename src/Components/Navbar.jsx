@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Styles/Components/Navbar.scss';
 import SearchIcon from '@material-ui/icons/Search'
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import InputField from './Common/InputField';
 import { useStateValue } from '../Utils/StateProvider';
 import { Link } from 'react-router-dom';
@@ -55,7 +55,7 @@ export function Navbar() {
             
             <Link title='cart' style={{ textDecoration: 'none' }} to="/checkout">
                 <div className="navbar_optionBasket">
-                    <ShoppingBasketIcon />
+                    <ShoppingCartOutlinedIcon />
                     <span className="option_LineTwo navbar_basketCount">{cart?.length}</span>
                 </div>
             </Link>
