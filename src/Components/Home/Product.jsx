@@ -39,7 +39,7 @@ function Product({ id, title, image, price, rating }) {
 
             <img className='product_image' src={image} alt=''/>
 
-            <Button class='button__wishlist' handleClick={addToCart} text='Add to Cart' />
+            <Button class='cart_button' handleClick={addToCart} text='Add to Cart' />
         </div>
     )
 }

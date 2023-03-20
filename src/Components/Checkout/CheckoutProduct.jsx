@@ -34,7 +34,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
                   <p><StarIcon className='checkoutProduct_ratingIcon' /></p>
               ))}
           </div>
-          <Button text='Remove from Cart' handleClick={removeFromCart} />
+          <Button class='cart_button' text='Remove from Cart' handleClick={removeFromCart} />
         </div>
       </div>
     </FlipMove>
