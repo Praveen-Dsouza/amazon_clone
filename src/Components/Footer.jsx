@@ -8,7 +8,7 @@ function Footer() {
 	return (
         <div>
             <div className="footer_backToTop" onClick={scrollToTop}>
-                <p>Back to Top</p>
+                <p>Back to top</p>
             </div>
             <div className="footer">
                 <div className="footer_container">
@@ -28,7 +28,7 @@ function Footer() {
                     </div>
 
                     <div className="footer_all">
-                        <div className="footer_title">Make Money with us</div>
+                        <div className="footer_title">Make Money with Us</div>
                         <p>Sell on Amazon</p>
                         <p>Sell on Amazon Accelerator</p>
                         <p>Protect and Build Your Brand</p>
