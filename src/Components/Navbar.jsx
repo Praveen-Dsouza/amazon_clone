@@ -55,7 +55,7 @@ export function Navbar() {
             
             <Link title='cart' style={{ textDecoration: 'none' }} to="/checkout">
                 <div className="navbar_optionBasket">
-                    <ShoppingCartOutlinedIcon />
+                    <ShoppingCartOutlinedIcon className='cart_icon' />
                     <span className="option_LineTwo navbar_basketCount">{cart?.length}</span>
                 </div>
             </Link>
