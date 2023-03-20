@@ -8,14 +8,10 @@ import Login from "./Components/Login";
 import { auth } from './firebase';
 import { useStateValue } from "./Utils/StateProvider";
 import Footer from "./Components/Footer";
+import Payment from "./Components/Payment";
 
 // Defination of routes
 const routes = createBrowserRouter([
-  // {
-  //   element: <Navbar />,
-  //   children: [
-  //   ]
-  // },
   {
     path: "/",
     element: [<Navbar />, <Home />, <Footer />],
@@ -23,6 +19,10 @@ const routes = createBrowserRouter([
   {
     path: "checkout",
     element: [<Navbar />, <Checkout />, <Footer />],
+  },
+  {
+    path: 'payment',
+    element: [<Navbar />, <Payment />, <Footer />],
   },
   {
     path: "login",
