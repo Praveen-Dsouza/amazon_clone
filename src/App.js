@@ -9,6 +9,10 @@ import { auth } from './firebase';
 import { useStateValue } from "./Utils/StateProvider";
 import Footer from "./Components/Footer";
 import Payment from "./Components/Payment";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
 
 // Defination of routes
 const routes = createBrowserRouter([
@@ -22,7 +26,11 @@ const routes = createBrowserRouter([
   },
   {
     path: 'payment',
-    element: [<Navbar />, <Payment />, <Footer />],
+    element: [<Navbar />, <Elements stripe={promise}><Payment /></Elements> , <Footer />],
+  },
+  {
+    path: "orders",
+    element: [<Navbar />, 'Orders', <Footer />],
   },
   {
     path: "login",
@@ -35,6 +43,7 @@ function App() {
   const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
+
     auth
       .onAuthStateChanged((authUser) => {
         console.log('auth user', authUser)

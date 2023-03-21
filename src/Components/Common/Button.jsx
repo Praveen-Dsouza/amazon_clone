@@ -7,7 +7,7 @@ function Button(props) {
     <>
         <button
             type={props.type}
-            className={`c_pointer ${props.class}`}
+            className={`btn c_pointer ${props.class}`}
             onClick={props.handleClick }
             disabled={props.disabled ? props.disabled: false}
         >
